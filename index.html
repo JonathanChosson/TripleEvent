@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation aux Événements</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nous vous invitons à une journée exceptionnelle !</h1>
+        </header>
+
+        <main>
+            <div class="starter-pack-container">
+                <div id="starterPack1" class="starter-pack" onclick="showEvent('event1')">
+                    <p>Florian</p>
+                </div>
+                <div id="starterPack2" class="starter-pack" onclick="showEvent('event2')">
+                    <p>Lazaze</p>
+                </div>
+                <div id="starterPack3" class="starter-pack" onclick="showEvent('event3')">
+                    <p>Charles</p>
+                </div>
+            </div>
+
+            <section id="event1" class="event">
+                <img src="starterPack1.png" alt="Communion de Florian" class="starter-pack-img" onclick="openModal(this)">
+            </section>
+
+            <section id="event2" class="event">
+                <img src="starterPack2.png" alt="Anniversaire de Lazaze" class="starter-pack-img" onclick="openModal(this)">
+            </section>
+
+            <section id="event3" class="event">
+                <img src="starterPack3.png" alt="Anniversaire de Charles" class="starter-pack-img" onclick="openModal(this)">
+            </section>
+        </main>
+
+        <!-- Modale d'image -->
+        <div id="imageModal" class="modal" onclick="closeModal()">
+            <img id="modalImg" class="modal-content" src="" alt="Image agrandie">
+        </div>
+
+        <!-- Modale de réponse -->
+        <div id="formModal" class="modal" onclick="closeFormModal(event)">
+            <div class="modal-form">
+                <h2>Répondez à l'invitation</h2>
+                <form id="responseForm">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="guests">Nombre de personnes :</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modale de détails -->
+        <div id="detailsModal" class="modal" onclick="closeDetailsModal(event)">
+            <div class="modal-form">
+                <h2>Détails de l'événement</h2>
+                <p id="eventDetailsText">[À compléter]</p>
+            </div>
+        </div>
+
+        <footer>
+            <button onclick="openDetailsModal()">Détail de l'événement</button>
+            <button onclick="openFormModal()">Répondre</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
