@@ -5,12 +5,14 @@ function showEvent(eventId) {
 
     const selectedEvent = document.getElementById(eventId);
     if (selectedEvent) {
+        launchConfetti();
         selectedEvent.style.display = "block";
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
     showEvent("event1");
+    launchConfetti();
 });
 
 // IMAGE MODALE
@@ -76,6 +78,14 @@ function closeDetailsModal(e) {
     if (e.target.id === "detailsModal") {
         document.getElementById("detailsModal").style.display = "none";
     }
+}
+
+function launchConfetti() {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+    });
 }
 
 const canvas = document.getElementById("scratchCanvas");
@@ -159,14 +169,6 @@ if (canvas && hiddenContent) {
             launchConfetti();
             confettiTriggered = true;
         }
-    }
-
-    function launchConfetti() {
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 },
-        });
     }
 
     // Événements

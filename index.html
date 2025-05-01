@@ -13,97 +13,97 @@
     </script>
 </head>
 
-<div id="scratchZone">
-    <div id="hiddenContent">
+<!-- <div id="scratchZone"> -->
+<!-- <div id="hiddenContent"> -->
 
-        <body>
-            <div class="container">
+<body>
+    <div class="container">
 
-                <header>
-                    <h1>Nous vous invitons à une journée exceptionnelle !</h1>
-                </header>
+        <header>
+            <h1>Nous vous invitons à une journée exceptionnelle !</h1>
+        </header>
 
-                <main>
-                    <div class="starter-pack-container">
-                        <div id="starterPack1" class="starter-pack" onclick="showEvent('event1')">
-                            <p>Florian</p>
-                        </div>
-                        <div id="starterPack2" class="starter-pack" onclick="showEvent('event2')">
-                            <p>Lazaze</p>
-                        </div>
-                        <div id="starterPack3" class="starter-pack" onclick="showEvent('event3')">
-                            <p>Charles</p>
-                        </div>
-                    </div>
-
-                    <section id="event1" class="event">
-                        <img src="starterPack1.png" alt="Communion de Florian" class="starter-pack-img"
-                            onclick="openModal(this)">
-                    </section>
-
-                    <section id="event2" class="event">
-                        <img src="starterPack2.png" alt="Anniversaire de Lazaze" class="starter-pack-img"
-                            onclick="openModal(this)">
-                    </section>
-
-                    <section id="event3" class="event">
-                        <img src="starterPack3.png" alt="Anniversaire de Charles" class="starter-pack-img"
-                            onclick="openModal(this)">
-                    </section>
-
-
-
-                </main>
-            </div>
-
-            <!-- Modale d'image -->
-            <div id="imageModal" class="modal" onclick="closeModal()">
-                <img id="modalImg" class="modal-content" src="" alt="Image agrandie">
-            </div>
-
-            <!-- Modale de réponse -->
-            <div id="formModal" class="modal" onclick="closeFormModal(event)">
-                <div class="modal-form">
-                    <h2>Répondez à l'invitation</h2>
-                    <form id="responseForm">
-                        <label for="nom">Nom :</label>
-                        <input type="text" id="nom" name="nom" required>
-
-                        <label for="nombre">Nombre de personnes :</label>
-                        <input type="number" id="nombre" name="nombre" min="1" required>
-
-                        <button type="submit" id="send">Envoyer</button>
-                    </form>
+        <main>
+            <div class="starter-pack-container">
+                <div id="starterPack1" class="starter-pack" onclick="showEvent('event1')">
+                    <p>Florian</p>
+                </div>
+                <div id="starterPack2" class="starter-pack" onclick="showEvent('event2')">
+                    <p>Lazaze</p>
+                </div>
+                <div id="starterPack3" class="starter-pack" onclick="showEvent('event3')">
+                    <p>Charles</p>
                 </div>
             </div>
 
-            <!-- Modale de détails -->
-            <div id="detailsModal" class="modal" onclick="closeDetailsModal(event)">
-                <div class="modal-form">
-                    <h2>Détails de l'événement</h2>
-                    <h2>🎉🎉🎉🎉🎉</h2>
-                    <p>Viens fêter ça avec nous 🥳</p>
-                    <p id="eventDetailsText">
-                    <h3>LE 07 Juin 2025 à partir de 12h et jusqu'au bout de la nuit</h3>
-                    <br />
-                    <h3>
-                        <a href="https://g.co/kgs/51KQu7p" target="_blank">315 Route Meridionale, 26300 Marches
-                        </a>
-                    </h3>
-                    </p>
-                </div>
-            </div>
+            <section id="event1" class="event">
+                <img src="starterPack1.png" alt="Communion de Florian" class="starter-pack-img"
+                    onclick="openModal(this)">
+            </section>
 
-            <footer>
-                <button onclick="openDetailsModal()">Détail de l'événement</button>
-                <button onclick="openFormModal()">Répondre</button>
-            </footer>
-            <canvas id="scratchCanvas"></canvas>
+            <section id="event2" class="event">
+                <img src="starterPack2.png" alt="Anniversaire de Lazaze" class="starter-pack-img"
+                    onclick="openModal(this)">
+            </section>
+
+            <section id="event3" class="event">
+                <img src="starterPack3.png" alt="Anniversaire de Charles" class="starter-pack-img"
+                    onclick="openModal(this)">
+            </section>
 
 
-            <script src="script.js"></script>
-        </body>
+
+        </main>
     </div>
-</div>
+
+    <!-- Modale d'image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <img id="modalImg" class="modal-content" src="" alt="Image agrandie">
+    </div>
+
+    <!-- Modale de réponse -->
+    <div id="formModal" class="modal" onclick="closeFormModal(event)">
+        <div class="modal-form">
+            <h2>Répondez à l'invitation</h2>
+            <form id="responseForm">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="nombre">Nombre de personnes :</label>
+                <input type="number" id="nombre" name="nombre" min="1" required>
+
+                <button type="submit" id="send">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modale de détails -->
+    <div id="detailsModal" class="modal" onclick="closeDetailsModal(event)">
+        <div class="modal-form">
+            <h2>Détails de l'événement</h2>
+            <h2>🎉🎉🎉🎉🎉</h2>
+            <p>Viens fêter ça avec nous 🥳</p>
+            <p id="eventDetailsText">
+            <h3>LE 07 Juin 2025 à partir de 12h et jusqu'au bout de la nuit</h3>
+            <br />
+            <h3>
+                <a href="https://g.co/kgs/51KQu7p" target="_blank">315 Route Meridionale, 26300 Marches
+                </a>
+            </h3>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <button onclick="openDetailsModal()">Détail de l'événement</button>
+        <button onclick="openFormModal()">Répondre</button>
+    </footer>
+    <!-- <canvas id="scratchCanvas"></canvas> -->
+
+
+    <script src="script.js"></script>
+</body>
+<!-- </div> -->
+<!-- </div> -->
 
 </html>
