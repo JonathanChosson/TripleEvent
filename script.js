@@ -45,13 +45,26 @@ document
     .getElementById("responseForm")
     .addEventListener("submit", function (e) {
         e.preventDefault();
-        const name = document.getElementById("name").value;
-        const guests = document.getElementById("guests").value;
+        document.getElementById("send").classList.add("hide");
+        const nom = document.getElementById("nom").value;
+        const nombre = document.getElementById("nombre").value;
 
-        alert(`Merci ${name} ! ${guests} personne(s) enregistrée(s).`);
+        const serviceID = "default_service";
+        const templateID = "template_xbtwwjy";
 
-        this.reset();
-        document.getElementById("formModal").style.display = "none";
+        emailjs.sendForm(serviceID, templateID, this).then(
+            () => {
+                alert(`Merci ${nom} ! ${nombre} personne(s) enregistrée(s).`);
+                this.reset();
+                document.getElementById("formModal").style.display = "none";
+                document.getElementById("send").classList.remove("hide");
+            },
+            (err) => {
+                alert(JSON.stringify(err));
+                this.reset();
+                document.getElementById("formModal").style.display = "none";
+            }
+        );
     });
 
 // Détails MODALE
